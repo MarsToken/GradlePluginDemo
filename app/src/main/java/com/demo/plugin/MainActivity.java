@@ -2,20 +2,22 @@ package com.demo.plugin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private Test test = new Test();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Test test = new Test();
-        test.makeTest();
-        test.newMethod();
-        new Test1().makeTest();
-        new Test2().makeTest();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        TextView tv = findViewById(R.id.tv);
+        tv.setText(test.makeTest(true));
     }
 }
