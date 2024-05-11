@@ -1,5 +1,4 @@
 apply plugin: 'java-library'
-
 repositories {
     google()
     mavenCentral()
@@ -7,8 +6,7 @@ repositories {
 dependencies {
     // 我们需要实现的 Plugin 接口在这个依赖中
     implementation 'com.android.tools.build:gradle:3.3.1'
-
-    compileOnly 'com.android.tools.build:gradle:3.3.1'
+    implementation gradleApi()
 }
 
 tasks.withType(JavaCompile) {
